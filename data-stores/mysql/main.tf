@@ -7,3 +7,15 @@ resource "aws_db_instance" "example" {
   username          = "${var.db_user}"
   password          = "${var.db_password}"
 }
+
+
+# reference to database tfstate
+data "terraform_remote_state" "db" {
+  backend = "s3"
+
+  config {
+    bucket = "${var.db_remote_state_bucket}"
+    key    = "${var.db_remote_state_key}"
+    region = "eu-west-2"
+  }
+}
