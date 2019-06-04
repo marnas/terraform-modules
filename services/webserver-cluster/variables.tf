@@ -19,6 +19,10 @@ variable "db_remote_state_key" {
   description = "The path for the database's remote state in S3"
 }
 
+variable "image_id" {
+  description = "The AMI of the EC2 Instances to run"
+}
+
 variable "instance_type" {
   description = "The type of EC2 Instances to run (e.g. t2.micro)"
 }

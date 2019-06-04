@@ -1,6 +1,6 @@
 # setting basic ec2 istance
 resource "aws_launch_configuration" "example" {
-  image_id      = "ami-40d28157"
+  image_id      = "${var.image_id}"
   instance_type = "${var.instance_type}"
   security_groups = ["${aws_security_group.instance.id}"]
 
